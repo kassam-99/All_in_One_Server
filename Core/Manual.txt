@@ -1,0 +1,493 @@
+
+=> DirectoryManager.py
+
+
+1. **Paths_Manager Class:**
+   - `__init__(self)`: Initializes the Paths_Manager class. It sets up logging, loads path settings, and attempts to find the project path. If the project path is not found, it logs an error.
+   
+   - `is_duplicate(self, pathname, newpath, lines)`: Checks if a given pathname and newpath pair already exist in the specified lines. Returns True and the section if a duplicate is found, otherwise False.
+
+   - `add_path(self, section, pathname, newpath)`: Adds a new path entry to the Paths.txt file. It checks for duplicates and adds the entry to the appropriate section.
+
+   - `remove_path(self, section, pathname)`: Removes a path entry from the Paths.txt file. It searches for the entry and deletes it if found.
+
+   - `Reset_Paths(self)`: Resets paths in the Paths.txt file based on the current project path.
+
+   - `SectionPath(self)`: Compares folders in the project directory with sections in Paths.txt and updates Paths.txt accordingly.
+
+   - `GeneralPaths(self)`: Adds paths for files in project subdirectories to Paths.txt.
+
+2. **Dir Class:**
+   - `__init__(self)`: Initializes the Dir class. It loads path settings, attempts to find the project path, and lists subdirectories.
+
+   - `ListDir(self, mode=False)`: Lists subdirectories and prints them. If `mode` is True, it returns a list of subdirectories.
+
+   - `list_contents(self, path, indent="")`: Recursively lists the contents of a directory.
+
+   - `ListContentsAllOfSubDir(self, checkfolder=None)`: Lists the contents of subdirectories. If `checkfolder` is provided, it only lists the contents of that folder.
+
+   - `ListAllDir(self)`: Lists all subdirectories and their contents.
+
+3. **ManageLogDir Class (inherits from Dir):**
+   - `__init__(self)`: Initializes the ManageLogDir class. It loads path settings, attempts to find the project path, and sets up directories for logs.
+
+   - `copy_folder(self, source_folder, destination_folder)`: Copies a folder and its contents to a destination folder.
+
+   - `copy_CoreLog(self, source_mainfile, destination_logfile)`: Copies a core log file from the main directory to the log directory.
+
+   - `CompareSubDirWithLog(self)`: Compares subdirectories in the project with log entries and copies missing logs.
+
+   - `RepathLogs(self, source_mainfile, destination_logfile)`: Updates log paths in the Paths.txt file.
+
+   - `CheckpathLog(self)`: Checks and updates log paths based on project directories.
+
+   - `MainLog(self)`: Calls functions to update and compare logs.
+
+4. **ProcessManager Class:**
+   - `__init__(self)`: Initializes the ProcessManager class. It sets up logging and loads process engine file settings.
+
+   - `write_to_process_engine_file(self, script_name_dir, used_terminal_dir, process_id_dir=None)`: Writes information about a running process to the process engine file.
+
+   - `delete_from_process_engine_file(self, script_name, process_id)`: Deletes information about a process from the process engine file.
+
+5. **Main Block:**
+   - The main block initializes and calls functions from the Paths_Manager, ManageLogDir, and Dir classes.
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+=> Emergency.py
+
+
+### `EmergencyHardCoded` Class:
+- **Constructor (`__init__`):**
+  - Initializes the class with essential properties.
+  - `self.Log`: Instance of the `Logs` class for logging.
+  - `self.file_path`: Path to the current script.
+  - `self.ProjectName`: Name of the project ("All_In_One_Server").
+  - `self.MainPathsText`: Filename for the Paths configuration file ("Paths.txt").
+  - `self.MainProcessesJson`: Filename for the Processes configuration file ("ProcessesLab.json").
+  - `self.PathSections`: List to store subdirectories in the project path.
+  - `self.BannedDir`: List of directories to be excluded.
+  - `self.MainPath`: Path to the main project directory.
+  - `self.script_dir`: Directory of the current script.
+  - `self.Pathsfile`: Full path to the Paths configuration file.
+  - `self.script_Processes`: Directory of the current script for Processes.
+  - `self.ProcessesFile`: Full path to the Processes configuration file.
+  - `self.All_In_One_ServerPathsSubfolder`: Dictionary with default paths for All_In_One_Server subfolders.
+  - `self.PathCore`, `self.PathAdmin`, `self.PathLogs`: Dictionaries for Core, Admin, and Logs paths.
+  - `self.PathSections`: List to store subdirectories in the project path.
+  - `self.PathServer`: List containing dictionaries for different sections of paths.
+  - `self.project_path`: Path to the All_In_One_Server project.
+
+### `EmergencyPathManager` Class (Inherits from `EmergencyHardCoded`):
+- **Constructor (`__init__`):**
+  - Calls the constructor of the superclass (`EmergencyHardCoded`).
+  - Initializes an instance of the `Logs` class for logging.
+
+- **`add_path` Function:**
+  - Adds a new path entry to the Paths configuration file.
+
+- **`Create_Sections` Function:**
+  - Creates sections in the Paths configuration file based on subdirectories.
+
+- **`Check_Defaults_Paths` Function:**
+  - Checks for default paths and adds them to the Paths configuration file.
+
+- **`GeneralPaths` Function:**
+  - Adds paths for files and directories in the All_In_One_Server project.
+
+- **`RepathLogs` Function:**
+  - Updates log paths for a given source and destination.
+
+- **`explore_folders` Function:**
+  - Explores folders to create log paths for each file.
+
+- **`Log_start` Function:**
+  - Initiates the logging process.
+
+- **`StartEmergencyModePath` Function:**
+  - Initiates the emergency mode for Paths.
+  - Calls necessary functions to create sections and paths.
+
+### `EmergencyProcessManager` Class (Inherits from `EmergencyHardCoded`):
+- **Constructor (`__init__`):**
+  - Calls the constructor of the superclass (`EmergencyHardCoded`).
+  - Initializes an instance of the `Logs` class for logging.
+
+- **`checkpath` Function:**
+  - Reads the Paths configuration file and retrieves the path for a given target.
+
+- **`ReadProcesses` Function:**
+  - Reads and returns data from the Processes configuration file.
+
+- **`delete_from_process_engine_file` Function:**
+  - Deletes a process entry from the Processes configuration file.
+  - Attempts to terminate the associated process using `os.kill`.
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+=> Modes.py
+
+
+### `ModeManager` Class:
+
+- **Constructor (`__init__`):**
+  - Initializes the class with essential properties.
+  - `self.log_modes`: Instance of the `Logs` class for logging mode-related messages.
+  - `self.dir_mode`: Instance of the `Dir` class for managing directories.
+  - `self.mode_settings`: Instance of the `Path_Settings` class for handling mode-related settings.
+  - `self.banned_modes`: List of excluded modes.
+  - `self.available_modes`: List to store available modes.
+
+- **`list_modes` Function:**
+  - Lists available modes.
+  - Calls `ListDir` from the `Dir` class to get a list of directories.
+  - Excludes directories specified in `self.banned_modes`.
+  - If `listed_mode` is `True`, prints and logs the available modes.
+  - Returns the list of available modes.
+
+- **`select_mode` Function:**
+  - Selects a mode based on user input.
+  - Calls `ListContentsAllOfSubDir` from the `Dir` class to list the contents of the selected mode's subdirectory.
+  - Prints and logs an error message if the selected mode is not found.
+
+- **`extract_folders_and_files` Function:**
+  - Extracts folders and files from an input string.
+  - Uses a regular expression (`file_pattern`) to match and extract file names from the input string.
+  - Returns a list of extracted file names.
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+=> Log.py
+
+
+### `Logs` Class:
+
+- **Constructor (`__init__`):**
+  - Initializes the class with a default log level (default is `logging.DEBUG`).
+  - Defines properties such as `logger`, `All_In_One_Serverpaths` (path of the script), `script_dir` (directory of the script), `Pathsfile` (path to "Paths.txt"), `mainloggerfile` (path to the main logger file), and `log_format` (format of the log entries).
+
+- **`log_to_file` Function:**
+  - Appends a log message to the main logger file.
+  - The log message includes the current timestamp, log type (`TypeLog`), and the message itself.
+
+- **`checkpath` Function:**
+  - Checks the existence of a target path in the "Paths.txt" file.
+  - Reads "Paths.txt" and extracts the path associated with the target path from commented lines.
+  - Returns the extracted path.
+
+- **`LogEngine` Function:**
+  - Configures the logging engine.
+  - Creates a logger object, sets its level, and creates a `FileHandler` to write logs to a file.
+  - The log file is determined based on the provided log path from the "Paths.txt" file.
+  - Configures the log file directory and sets the log format.
+  - Adds the `FileHandler` to the logger.
+
+- **`LogsMessages` Function:**
+  - Logs messages at different log levels (debug, info, warning, error, critical).
+  - The log level is determined by the `message_type` parameter.
+  - Logs the message using the appropriate logging method.
+
+- **`print_and_log` Function:**
+  - Calls `LogsMessages` to log a message and then prints the message.
+  - Provides a way to log and print messages simultaneously.
+
+### Main Block (`if __name__ == "__main__":`):
+- Creates an instance of the `Logs` class (`logger`).
+- Calls `LogEngine` to configure the logger for an example logger named "ExampleLogger" and log file "Log.log".
+- Logs a hidden message, and logs/print a test message with the specified message type ("info").
+
+Overall, this script is designed for logging messages at different levels and provides a simple logging utility for Python scripts. The log configurations are obtained from the "Paths.txt" file.
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+=> settings.py
+
+
+This script defines several classes related to server settings, including `Path_Settings`, `Server_Settings`, and various server types like `TCP_Server`, `UDP_Server`, `Websockets_Server`, `HTTP_Server`, `HTTPs_Server`, `ssh_Server`, and `FTP_Server`. Here's an overview of each class:
+
+### `Path_Settings`:
+- Manages path settings and checks for the existence of critical files.
+- Handles emergency situations if necessary.
+- Defines `checkpath` method to retrieve paths from the "Paths.txt" file.
+- Uses the `EmergencyPathManager` class in case of emergencies.
+
+### `Server_Settings`:
+- Handles common settings for different server types.
+- Defines methods for setting maximum connections, timeout, and malware threads.
+- Provides methods to check the system, get available terminals, and check for an open port.
+- Includes a method to start a server and display server details.
+
+### Server Types:
+#### `TCP_Server`, `UDP_Server`, `Websockets_Server`, `HTTP_Server`, `HTTPs_Server`, `ssh_Server`, `FTP_Server`:
+- Each class is responsible for a specific type of server and inherits from `Server_Settings`.
+- Defines methods to initialize and start the respective servers.
+- Provides details about the server, such as IP, port, hostname, and platform.
+- Utilizes the `Logs` class for logging.
+
+### Main Block:
+- Creates an instance of `Path_Settings` and demonstrates the `checkpath` method.
+- Comments out a line creating an instance of `Server_Settings` as it does not have a direct instantiation.
+- The script provides an organized structure for managing various server types and their settings.
+
+Considerations:
+- The script contains several commented-out code blocks, which might be for future expansion or debugging.
+- For security reasons, sensitive information such as passwords and key files should be handled securely and not hard-coded in the script.
+- The use of `asyncio.run(main())` in the `start_websockets_server` method requires Python 3.7 or later.
+
+Overall, the script provides a foundation for managing and starting different types of servers with customizable settings.
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+=> SysMonitor.py
+
+
+### `Sensor` Class:
+
+#### Constructor (`__init__`):
+- Initializes the `Logs` class (`LogSys`) for logging system-related information.
+- Calls the `LogEngine` method from the `Logs` class to set up logging for the SysMonitor component.
+
+#### `CPU_Checker` Function:
+- Uses the `psutil` library to check CPU usage.
+- Prints and logs the CPU usage percentage.
+
+#### `Uptime` Function:
+- Calculates and logs the system uptime.
+
+#### `Check_Sensors` Function:
+- Checks for available sensors related to temperature, battery, and fans using `psutil`.
+- Stores the sensor information in class attributes (`Component_Temp`, `Battery`, `Fan`).
+
+#### `Component_Temp_Checker` Function:
+- Iterates over temperature sensors and logs the current temperature for each device.
+
+#### `Battery_Checker` Function:
+- Checks battery information using `psutil` and logs details such as power status, percentage, and time remaining.
+
+#### `Fan_Checker` Function:
+- Logs information about fan speed.
+
+#### `Brightness_checker` Function:
+- Checks and logs the system brightness (specific to Linux).
+
+#### `Memory_Checker` Function:
+- Uses `psutil` to check and log memory usage details.
+
+#### `Disk_Checker` Function:
+- Uses `psutil` to check and log disk usage details.
+
+#### `Network_Checker` Function:
+- Uses `psutil` to check and log network usage details.
+
+#### `OS_Info` Function:
+- Logs information about the operating system.
+
+#### `Logged_Users` Function:
+- Logs information about currently logged-in users.
+
+#### `GPU_Checker` Function:
+- Checks GPU usage and memory information, if available.
+
+#### `Start_Sensor` Function:
+- Calls various methods to gather and log system-related information.
+
+### `RealTime_Dir` Class:
+
+#### Constructor (`__init__`):
+- Initializes the `Logs` class (`LogSys`) for logging directory monitoring-related information.
+- Calls the `LogEngine` method from the `Logs` class to set up logging for the SysMonitor component.
+- Initializes other necessary classes for managing paths and logs.
+
+#### `take_snapshot` Function:
+- Takes a snapshot of the current state of directories and files in the specified main path.
+
+#### `monitor_changes` Function:
+- Monitors changes in directories and files and alerts the user when changes are detected.
+
+#### `alert_user` Function:
+- Logs and prints information about added, removed, or modified items.
+- Calls `Take_Action` method to perform actions based on detected changes.
+
+#### `Take_Action` Function:
+- Performs actions based on detected changes, such as adding or removing paths.
+
+#### `take_snapshot_log` Function:
+- Takes a snapshot of the current state of logs in the specified log path.
+
+#### `monitor_changes_log` Function:
+- Monitors changes in logs and alerts the user when changes are detected.
+
+#### `alert_user_log` Function:
+- Logs and prints information about added or removed log items.
+- Calls `Take_Action_log` method to perform actions based on detected changes.
+
+#### `Take_Action_log` Function:
+- Performs actions based on detected changes in logs, such as adding or removing paths.
+
+#### `Start_Monitor` Function:
+- Calls methods to take snapshots and start monitoring changes in both the main path and log path.
+
+### `RealTime_Process` Class:
+
+#### Constructor (`__init__`):
+- Initializes the `Logs` class (`LogSys`) for logging process-related information.
+- Calls the `LogEngine` method from the `Logs` class to set up logging for the SysMonitor component.
+- Initializes other necessary classes for managing paths and logs.
+
+#### `ProcessInfo` Function:
+- Takes a script name and process ID as input, checks process information using `psutil`, and logs details.
+
+#### `ProcessAlert` Function:
+- Sends a notification when a script is started.
+
+#### `send_notification` Function:
+- Sends platform-specific notifications.
+
+#### Main Section:
+- If the script is run directly, it calls the `ProcessInfo` function with sample input.
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+=> Engine.py:
+
+### Libraries:
+- `os`: Provides a way to interact with the operating system.
+- `subprocess`: Allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes.
+- `uuid`: Generates unique identifiers.
+- `psutil`: Provides an interface for retrieving information on running processes and system utilization.
+- `multiprocessing`: Supports the spawning of processes using an API similar to the threading module.
+- `time`: Provides various time-related functions.
+- `datetime`: Supplies classes for working with dates and times.
+- `Logs`, `Server_Settings`, `Path_Settings`, `ProcessManager`, `RealTime_Process`: These seem to be custom modules or classes for handling logging, server settings, path settings, managing directories, and monitoring real-time processes.
+
+### EngineServer Class:
+- **Attributes:**
+  - `engine_logs`: An instance of the `Logs` class for handling logs.
+  - `Engine_ServerSettings`: An instance of the `Server_Settings` class for server settings.
+  - `Engine_PathSettings`: An instance of the `Path_Settings` class for path settings.
+  - `Engine_ProcessManager`: An instance of the `ProcessManager` class for managing directories.
+  - `Engine_Realtime_Process`: An instance of the `RealTime_Process` class for real-time process monitoring.
+  - `Script_Operation`: A dictionary to store information about running scripts.
+  - `Script_Params`: A dictionary to store parameters for scripts.
+  - `system_type`: A string indicating the type of operating system.
+
+### ProcessEngine Class (inherits from EngineServer):
+- **Methods:**
+  - `find_process_id_by_name(script_name)`: Finds the process ID of a script by its name.
+  - `get_process_id_by_name(script_name)`: Gets the process ID of a script by its name.
+  - `Process_Organiser(script_name_process, terminal, script_nickname_process=None)`: Organizes information about a running script.
+
+### ScriptEngine Class (inherits from ProcessEngine):
+- **Methods:**
+  - `start_running(start_script_name, start_user_choice_terminal, start_script_nickname=None, params=None)`: Starts running a script.
+  - `execute_script(command, choice_terminal)`: Executes a script.
+  - `execute_script_multiprocess(command, user_choice_terminal, script_name, script_nickname=None)`: Executes a script in a separate process.
+  - `stop_running(script_name)`: Stops a running script.
+  - `show_running()`: Displays information about running scripts.
+  - `rename_running(script_name_old, script_name_new)`: Renames a running script.
+  - `restart_script(script_name_restart)`: Restarts a running script.
+  - `stop_all_running()`: Stops all running scripts.
+
+### Explanation:
+- These classes seem to be part of a script management system where you can start, stop, rename, and monitor scripts.
+- `EngineServer` is the base class providing common functionality and attributes.
+- `ProcessEngine` extends `EngineServer` and includes methods for finding and organizing processes.
+- `ScriptEngine` further extends `ProcessEngine` and provides methods for starting, stopping, renaming, and monitoring scripts.
+
+### Note:
+- It seems that some of the methods, such as `execute_script`, `execute_script_multiprocess`, `stop_running`, and others, involve interacting with subprocesses, managing logs, and handling real-time process monitoring. The script appears to be designed for controlling and monitoring the execution of various scripts on different operating systems.

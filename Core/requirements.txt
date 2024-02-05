@@ -1,0 +1,12 @@
+sockets
+asyncio
+websockets
+httpserver
+ssh
+paramiko
+pyftpdlib
+platform
+json
+requests
+gputil
+plyer
