@@ -26,8 +26,7 @@ Defalut username and password:
  - password = `admin`
 
 
-`
-Note: you can change a username, password, listening IP and port from All-in-One Server/Core/Settings.py
+`Note: you can change a username, password, listening IP and port from All-in-One Server/Core/Settings.py
 
 
 class Server_Settings:    
