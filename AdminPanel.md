@@ -26,15 +26,32 @@ Defalut username and password:
  - password = `admin`
 
 
-`Note: you can change a username, password, listening IP and port from All-in-One Server/Core/Settings.py`
+`Note: you can change a username, password, listening IP and port from All_in_One_Server/Core/Settings.py`
 
 
 <pre>
+
 class Server_Settings:    
     DEFAULT_IP = "localhost"
     DEFAULT_PORT = 3000
     DEFAULT_ServerUsername = "admin"
     DEFAULT_ServerPassword = "admin"
+
+
+Also you can change IP and port from 'All_in_One_Server/Admin/AdminPanel.py`
+
+
+class Admin:
+    def __init__(self):
+        self.AdminLog = Logs()
+        self.AdminEngine = ScriptEngine()
+        self.AdminModes = ModeManager()
+        self.AdminServerSettings = Server_Settings()
+        self.AdminPathSettings = Path_Settings()
+        self.AdminSensor = Sensor()
+        self.AdminServerConnection = TCP_Server(tcp_server_ip="Your_IP", tcp_server_port="Your_PORT")
+
+
 </pre>
 
 
