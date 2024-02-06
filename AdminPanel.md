@@ -1,4 +1,4 @@
-# All-in-One Server Admin Panel
+# All-in-One Server - Admin Panel
 This project is a part of the All-in-One Server, which includes various functionalities such as file management, terminal access, and more. The Admin Panel is a separate component that allows administrators to manage and control the server remotely.
 
 ## Features
@@ -16,8 +16,8 @@ The Engine, Modes, Log, Settings, SysMonitor, and Commands modules from the All-
 ## Usage
 Ensure the required libraries and modules are installed and available.
 Update the Server_Settings and Path_Settings with the appropriate settings for your environment.
-Run the script using Python: python admin_panel.py
-Connect to the admin panel using a terminal or command prompt and enter the provided IP address and port number.
+Run the script using Python: python AdminPanel.py or just run Dashboard.py
+Connect to the admin panel using a terminal or command prompt and enter the provided IP address and port number through `admin.py script`.
 Authenticate with the correct username and password.
 Use the available commands to manage and control the server.
 
