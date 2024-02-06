@@ -37,9 +37,12 @@ class Server_Settings:
     DEFAULT_ServerUsername = "admin"
     DEFAULT_ServerPassword = "admin"
 
+</pre>
 
 Also you can change IP and port from 'All_in_One_Server/Admin/AdminPanel.py`
 
+
+<pre>
 
 class Admin:
     def __init__(self):
@@ -50,7 +53,6 @@ class Admin:
         self.AdminPathSettings = Path_Settings()
         self.AdminSensor = Sensor()
         self.AdminServerConnection = TCP_Server(tcp_server_ip="Your_IP", tcp_server_port="Your_PORT")
-
 
 </pre>
 
