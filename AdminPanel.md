@@ -17,8 +17,11 @@ The Engine, Modes, Log, Settings, SysMonitor, and Commands modules from the All-
 Ensure the required libraries and modules are installed and available.
 Update the Server_Settings and Path_Settings with the appropriate settings for your environment.
 Run the script using Python: python AdminPanel.py or just run Dashboard.py
-Connect to the admin panel using a terminal or command prompt and enter the provided IP address and port number through `admin.py script`.
+Connect to the admin panel using a terminal or command prompt and enter the provided IP address and port number through `Admin.py script`.
 Authenticate with the correct username and password.
+Defalut username and pass
+username = `admin`
+password = `admin`
 Use the available commands to manage and control the server.
 
 ## Commands
