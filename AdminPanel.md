@@ -18,10 +18,13 @@ Ensure the required libraries and modules are installed and available.
 Update the Server_Settings and Path_Settings with the appropriate settings for your environment.
 Run the script using Python: python AdminPanel.py or just run Dashboard.py
 Connect to the admin panel using a terminal or command prompt and enter the provided IP address and port number through `Admin.py script`.
+
 Authenticate with the correct username and password.
+
 Defalut username and password:
  - username = `admin`
  - password = `admin`
+
 `
 Note: you can change a username, password, listening IP and port from
 All-in-One Server/Core/Settings.py
