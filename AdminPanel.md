@@ -19,9 +19,20 @@ Update the Server_Settings and Path_Settings with the appropriate settings for y
 Run the script using Python: python AdminPanel.py or just run Dashboard.py
 Connect to the admin panel using a terminal or command prompt and enter the provided IP address and port number through `Admin.py script`.
 Authenticate with the correct username and password.
-Defalut username and pass
-username = `admin`
-password = `admin`
+Defalut username and password:
+ - username = `admin`
+ - password = `admin`
+`Note: you can change a username, password, listening IP and port from
+
+All-in-One Server/Core/Settings.py
+class Server_Settings:
+    
+    DEFAULT_IP = "localhost"
+    DEFAULT_PORT = 3000
+    DEFAULT_ServerUsername = "admin"
+    DEFAULT_ServerPassword = "admin"
+
+`
 Use the available commands to manage and control the server.
 
 ## Commands
