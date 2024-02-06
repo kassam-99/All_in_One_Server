@@ -22,8 +22,8 @@ Authenticate with the correct username and password.
 Defalut username and password:
  - username = `admin`
  - password = `admin`
-`Note: you can change a username, password, listening IP and port from
-
+`
+Note: you can change a username, password, listening IP and port from
 All-in-One Server/Core/Settings.py
 class Server_Settings:
     
