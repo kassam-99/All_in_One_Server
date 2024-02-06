@@ -1,4 +1,4 @@
-# All-in-One Server Dashboard
+# All-in-One Server - Dashboard
 The All-in-One Server Dashboard is a command-line interface for managing and running server scripts. It provides a user-friendly interface to list, select, and run scripts with custom parameters and terminals. The dashboard also includes a real-time file system monitor and system information sensor.
 
 # Features
