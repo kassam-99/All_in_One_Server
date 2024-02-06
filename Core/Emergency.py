@@ -17,7 +17,7 @@ class EmergencyHardCoded:
         self.MainProcessesJson = "ProcessesLab.json"
         self.MainBannedIP = "banned_ips.json"
         self.PathSections = list()
-        self.BannedDir = ["Core", "Logs", "Admin"]
+        self.BannedDir = ["Core", "Logs"]
         index = self.file_path.find(self.ProjectName)
         if index != -1:
             self.MainPath = self.file_path[:index+self.index_length_project+1]

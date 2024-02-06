@@ -25,7 +25,8 @@ class ModeManager:
         if listed_mode:
             self.log_modes.print_and_log("[*] Available Modes:")
             for i, mode in enumerate(self.available_modes, start=1):
-                self.log_modes.print_and_log(f"[{i}] {mode}")
+                if '.' not in mode:
+                    self.log_modes.print_and_log(f"[{i}] {mode}")
 
         return self.available_modes
 
