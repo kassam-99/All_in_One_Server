@@ -39,7 +39,7 @@ class Server_Settings:
 
 </pre>
 
-Also you can change IP and port from 'All_in_One_Server/Admin/AdminPanel.py`
+Also you can change IP and port from `All_in_One_Server/Admin/AdminPanel.py`
 
 
 <pre>
