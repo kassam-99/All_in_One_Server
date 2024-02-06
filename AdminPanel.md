@@ -25,10 +25,9 @@ Defalut username and password:
  - username = `admin`
  - password = `admin`
 
-`
 
-Note: you can change a username, password, listening IP and port from
-All-in-One Server/Core/Settings.py
+
+Note: you can change a username, password, listening IP and port from 'All-in-One Server/Core/Settings.py'
 class Server_Settings:
     
     DEFAULT_IP = "localhost"
@@ -36,7 +35,7 @@ class Server_Settings:
     DEFAULT_ServerUsername = "admin"
     DEFAULT_ServerPassword = "admin"
 
-`
+
 
 Use the available commands to manage and control the server.
 
