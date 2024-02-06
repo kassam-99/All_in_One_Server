@@ -9,7 +9,13 @@ sys.path.append(core_dir)
 
 from Settings import FTP_Server
 
-pathx = "/media/zedx/WORKSPACE/Cybersecurity_workspace/Programming/Python/Projects/All_in_One_Server"
+
+project_root = os.path.abspath(__file__)
+index = project_root.find("All_in_One_Server")
+if index != -1:
+    pathx = project_root[:index+18]+"Other"
+    
+
 
 
 server = FTP_Server()
