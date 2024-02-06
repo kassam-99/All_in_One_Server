@@ -1,4 +1,4 @@
-# All-in-One Server Admin Panel
+### All-in-One Server Admin Panel
 This project is a part of the All-in-One Server, which includes various functionalities such as file management, terminal access, and more. The Admin Panel is a separate component that allows administrators to manage and control the server remotely.
 
 # Features
@@ -22,17 +22,17 @@ Authenticate with the correct username and password.
 Use the available commands to manage and control the server.
 
 # Commands
-list: Display available modes
-rename <old_name> <new_name>: Rename a running script
-stop <name>: Stop a running script
-stop_all: Stop all running scripts
-restart <name>: Restart a running script
-map: Display available modes and allow selecting a mode
-info: Display system information
-show: Display running scripts
-help: Display available commands and usage
-read: Display the server banner
-exit: Log out and close the connection
+ - 'list': Display available modes
+ - 'rename' <old_name> <new_name>: Rename a running script
+ - 'stop' <name>: Stop a running script
+ - 'stop_all': Stop all running scripts
+ - 'restart' <name>: Restart a running script
+ - 'map': Display available modes and allow selecting a mode
+ - 'info': Display system information
+ - 'show': Display running scripts
+ - 'help': Display available commands and usage
+ - 'read': Display the server banner
+ - 'exit': Log out and close the connection
 
 # Admin Connection Class
 The AdminConnection class is responsible for handling client connections, authenticating users, and managing the server.
