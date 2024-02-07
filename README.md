@@ -1,5 +1,4 @@
 # All-in-One Server Framework 
-Overview
 
 The All-in-One Server Framework is a versatile and comprehensive solution designed for managing, controlling, and monitoring various server-related operations. It supports multiple types of connections, including TCP, UDP, Websockets, HTTP, HTTPS, SSH, and FTP.
 
