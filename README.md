@@ -4,61 +4,67 @@ The All-in-One Server Framework is a versatile and comprehensive solution design
 
 # Core
 The framework consists of several modules, each serving a specific purpose, providing functionalities such as directory management, process management, emergency handling, mode management, logging, server settings, and system monitoring.
-Directory Structure
 
-    DirectoryManager.py:
-        Manages paths and directories.
-        Handles directory listing, content retrieval, log directory management, and process management.
+## Directory Structure
 
-    Emergency.py:
-        Provides emergency handling functionalities.
-        Manages paths and processes in emergency situations.
-        Includes classes for handling paths and processes during emergencies.
+DirectoryManager.py:
+    Manages paths and directories.
+    Handles directory listing, content retrieval, log directory management, and process management.
 
-    Modes.py:
-        Manages different operation modes.
-        Lists and selects available modes.
-        Extracts folders and files from input strings.
+Emergency.py:
+    Provides emergency handling functionalities.
+    Manages paths and processes in emergency situations.
+    Includes classes for handling paths and processes during emergencies.
 
-    Log.py:
-        Handles logging functionalities.
-        Logs messages at different levels.
-        Configures and initializes the logging engine.
+Modes.py:
+    Manages different operation modes.
+    Lists and selects available modes.
+    Extracts folders and files from input strings.
 
-    settings.py:
-        Defines classes for managing server settings.
-        Includes settings for various server types such as TCP, UDP, Websockets, HTTP, HTTPS, SSH, and FTP.
+Log.py:
+    Handles logging functionalities.
+    Logs messages at different levels.
+    Configures and initializes the logging engine.
 
-    SysMonitor.py:
-        Monitors system-related information in real-time.
-        Checks CPU usage, system uptime, sensors, battery, fans, brightness, memory, disk, network, OS info, logged users, and GPU.
+settings.py:
+    Defines classes for managing server settings.
+    Includes settings for various server types such as TCP, UDP, Websockets, HTTP, HTTPS, SSH, and FTP.
 
-    Engine.py:
-        Manages script execution and monitoring.
-        Controls running scripts, including starting, stopping, renaming, and monitoring.
+SysMonitor.py:
+    Monitors system-related information in real-time.
+    Checks CPU usage, system uptime, sensors, battery, fans, brightness, memory, disk, network, OS info, logged users, and GPU.
+
+Engine.py:
+    Manages script execution and monitoring.
+    Controls running scripts, including starting, stopping, renaming, and monitoring.
 
 # Getting Started
 
-    Clone the repository.
+Clone the repository.
     `git clone https://github.com/kassam-99/ALL-in-One-Server-Framework.git`
-    Install dependencies, if any, mentioned in each module.
-    Explore and utilize the functionalities provided by each module as needed for your server operations.
+Install dependencies, if any, mentioned in each module.
+     `pip install requirements.txt`
+Explore and utilize the functionalities provided by each module as needed for your server operations.
 
 # Usage Examples
 
-    Managing Paths:
-        Use Paths_Manager in DirectoryManager.py to add, remove, and reset paths.
-        Utilize EmergencyPathManager in Emergency.py for emergency path management.
+Launch a server:
+    `cd Admin`
+    `python Dashboard.py`
+    
+Managing Paths:
+    Use Paths_Manager in DirectoryManager.py to add, remove, and reset paths.
+    Utilize EmergencyPathManager in Emergency.py for emergency path management.
 
-    Real-time System Monitoring:
-        Use Sensor in SysMonitor.py to check CPU, memory, disk, network, and other system-related information in real-time.
-        Monitor directories and logs with RealTime_Dir and RealTime_Process in SysMonitor.py.
+Real-time System Monitoring:
+    Use Sensor in SysMonitor.py to check CPU, memory, disk, network, and other system-related information in real-time.
+    Monitor directories and logs with RealTime_Dir and RealTime_Process in SysMonitor.py.
 
-    Server Settings:
-        Customize server settings for different types (TCP, UDP, Websockets, HTTP, HTTPS, SSH, FTP) using Server_Settings in settings.py.
+Server Settings:
+    Customize server settings for different types (TCP, UDP, Websockets, HTTP, HTTPS, SSH, FTP) using Server_Settings in settings.py.
 
-    Script Management:
-        Use ScriptEngine in Engine.py to start, stop, rename, and monitor running scripts.
+Script Management:
+    Use ScriptEngine in Engine.py to start, stop, rename, and monitor running scripts.
 
 # Contributing
 
