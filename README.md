@@ -58,6 +58,11 @@ Launch a server:
 
     python Dashboard.py
 
+Or to connect to a server with administrative privileges:
+
+    python Admin.py
+
+`Make sure to read AdminPanel.md and Dashaboard.md before starting a server`
 Managing Paths:
     Use Paths_Manager in DirectoryManager.py to add, remove, and reset paths.
     Utilize EmergencyPathManager in Emergency.py for emergency path management.
