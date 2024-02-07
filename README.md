@@ -44,7 +44,8 @@ Clone the repository.
     git clone https://github.com/kassam-99/ALL-in-One-Server-Framework.git
 
 <b>
-Install dependencies, if any, mentioned in each module.
+Install dependencies
+    pip install requirements.txt
 </b>
 
 # Usage Examples
