@@ -1,8 +1,9 @@
-All-in-One Server Framework Readme
+# All-in-One Server Framework 
 Overview
 
 The All-in-One Server Framework is a versatile and comprehensive solution designed for managing, controlling, and monitoring various server-related operations. It supports multiple types of connections, including TCP, UDP, Websockets, HTTP, HTTPS, SSH, and FTP.
 
+# Core
 The framework consists of several modules, each serving a specific purpose, providing functionalities such as directory management, process management, emergency handling, mode management, logging, server settings, and system monitoring.
 Directory Structure
 
@@ -37,13 +38,13 @@ Directory Structure
         Manages script execution and monitoring.
         Controls running scripts, including starting, stopping, renaming, and monitoring.
 
-Getting Started
+# Getting Started
 
     Clone the repository.
     Install dependencies, if any, mentioned in each module.
     Explore and utilize the functionalities provided by each module as needed for your server operations.
 
-Usage Examples
+# Usage Examples
 
     Managing Paths:
         Use Paths_Manager in DirectoryManager.py to add, remove, and reset paths.
@@ -59,6 +60,6 @@ Usage Examples
     Script Management:
         Use ScriptEngine in Engine.py to start, stop, rename, and monitor running scripts.
 
-Contributing
+# Contributing
 
 Feel free to contribute by opening issues, submitting pull requests, or providing feedback. We welcome any improvements or additional features that enhance the functionality and usability of the framework.
