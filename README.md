@@ -4,7 +4,8 @@ The All-in-One Server Framework is a versatile and comprehensive solution design
 
 # Core
 The framework consists of several modules, each serving a specific purpose, providing functionalities such as directory management, process management, emergency handling, mode management, logging, server settings, and system monitoring.
-Directory Structure
+
+## Directory Structure
 
     DirectoryManager.py:
         Manages paths and directories.
