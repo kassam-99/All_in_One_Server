@@ -67,6 +67,16 @@ Make sure to read AdminPanel.md and Dashaboard.md before starting a server.
     
 </b>
 
+
+Table of Contents
+
+ - List Available Modes
+ - Select a Mode
+ - Choose a Script to Run
+ - Select a Terminal
+ - Add Script Parameters (Optional)
+ - View Script Mapping
+    
 Managing Paths:
     Use Paths_Manager in DirectoryManager.py to add, remove, and reset paths.
     Utilize EmergencyPathManager in Emergency.py for emergency path management.
