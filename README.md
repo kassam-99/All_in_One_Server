@@ -75,7 +75,7 @@ Table of Contents
  - Choose a Script to Run
  - Select a Terminal
  - Add Script Parameters (Optional)
- - View Script Mapping
+ - View all script(s) - Mapping in any mode
     
 Managing Paths:
     Use Paths_Manager in DirectoryManager.py to add, remove, and reset paths.
