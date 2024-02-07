@@ -355,10 +355,6 @@ class ManageLogDir(Dir):
             self.Log.LogsMessages("[!] All_in_One_ServerCore path not found in Paths.txt", "Critical")
             raise ValueError
 
-        self.Admin_dir = self.DirectorySettings.checkpath('All_in_One_ServerAdmin')
-        if not self.Admin_dir or not os.path.isdir(self.Admin_dir):
-            self.Log.LogsMessages("[!] All_in_One_ServerAdmin path not found in Paths.txt", "Critical")
-            raise ValueError
 
     def copy_folder(self, source_folder, destination_folder):
         try:
@@ -463,9 +459,6 @@ class ManageLogDir(Dir):
                 for root, dirs, files in os.walk(base_path):
                     if os.path.samefile(base_path, self.Core_dir):
                         dirs[:] = [d for d in dirs if d not in ["__pycache__", "Logs"]]
-
-                    elif os.path.samefile(base_path, self.Admin_dir):
-                        dirs[:] = [d for d in dirs if d not in ["__pycache__"]]
                         
                     for file in files:
                         source_file = os.path.join(root, file)
