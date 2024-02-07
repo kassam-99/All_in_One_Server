@@ -63,7 +63,8 @@ Or to connect to a server with administrative privileges:
     python Admin.py
 
 <b>
-Make sure to read AdminPanel.md and Dashaboard.md before starting a server
+Make sure to read AdminPanel.md and Dashaboard.md before starting a server.
+    
 </b>
 
 Managing Paths:
