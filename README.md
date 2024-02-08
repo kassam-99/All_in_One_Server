@@ -87,6 +87,46 @@ Real-time System Monitoring:
 
 Server Settings:
     Customize server settings for different types (TCP, UDP, Websockets, HTTP, HTTPS, SSH, FTP) using Server_Settings in settings.py.
+    `Make sure to insert this code in your script:`
+    
+        import os
+        import sys
+        
+        project_root = os.path.abspath(__file__)
+        index = project_root.find("All_in_One_Server")
+        if index != -1:
+            core_dir = project_root[:index+6]+"Core"
+        sys.path.append(core_dir)
+        
+        from Settings import *
+
+
+
+
+        
+    Example:
+    
+    "All_in_One_Serve/TCP_Chat/test.py"
+        import os
+        import sys
+        
+        project_root = os.path.abspath(__file__)
+        index = project_root.find("All_in_One_Server")
+        if index != -1:
+            core_dir = project_root[:index+6]+"Core"
+        sys.path.append(core_dir)
+        
+        from Settings import *
+
+
+        code....
+
+        
+        while True:
+           server = TCP_Server()
+           server.start_TCP_Server()
+           client_socket, addr = server.tcp_handler.accept()
+
 
 Script Management:
     Use ScriptEngine in Engine.py to start, stop, rename, and monitor running scripts.
