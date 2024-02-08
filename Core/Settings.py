@@ -129,7 +129,7 @@ class Server_Settings:
         import sys
         
         project_root = os.path.abspath(__file__)
-        index = project_root.find("All_in_One_server_")
+        index = project_root.find("All_in_One_Server")
         if index != -1:
             core_dir = project_root[:index+6]+"Core"
         sys.path.append(core_dir)
