@@ -42,7 +42,7 @@ Engine.py:
 
 Clone the repository.
     
-    git clone https://github.com/kassam-99/ALL-in-One-Server-Framework.git
+    git clone https://github.com/kassam-99/All_in_One_Server.git
 
 
 Install dependencies
