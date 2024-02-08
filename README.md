@@ -100,7 +100,7 @@ Server Settings:
 
 
 
-    `By doing that, you can import any class from any Settings.py or any script you wish!`
+    By doing that, you can import any class from any Settings.py or any script you wish!
         
     Example:
     
