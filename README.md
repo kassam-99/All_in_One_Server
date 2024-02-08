@@ -97,12 +97,10 @@ Server Settings:
         if index != -1:
             core_dir = project_root[:index+6]+"Core"
         sys.path.append(core_dir)
-        
-        from Settings import *
 
 
 
-
+    `By doing that, you can import any class from any Settings.py or any script you wish!`
         
     Example:
     
@@ -116,7 +114,7 @@ Server Settings:
             core_dir = project_root[:index+6]+"Core"
         sys.path.append(core_dir)
         
-        from Settings import *
+        from Settings import TCP_Server()
 
 
         code....
